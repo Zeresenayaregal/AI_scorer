@@ -1,0 +1,1 @@
+# LLAMA 3 model integration that does accept API and use that api to scorer top job applicants.
