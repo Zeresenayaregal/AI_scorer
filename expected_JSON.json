@@ -1,0 +1,39 @@
+{
+    "applicants": [
+        {
+            "applicant_name": "John Doe",
+            "description": {
+                "aboutJob": "The Software Developer will be responsible...",
+                "requirements": "A bachelor's degree in Computer Science...",
+                "responsibilities": "Develop and maintain software applications...",
+                "additional": "Familiarity with Agile methodologies..."
+            },
+            "education": [
+                {
+                    "schoolName": "University of Technology",
+                    "degree": "Bachelor of Science",
+                    "fieldOfStudy": "Computer Science",
+                    "startYear": 2015,
+                    "endYear": 2019
+                }
+            ],
+            "experience": [
+                {
+                    "title": "Software Developer",
+                    "company": "Tech Solutions Inc.",
+                    "location": "San Francisco, CA",
+                    "startDate": "2020-06-01",
+                    "endDate": "2023-09-01",
+                    "description": "Worked on developing and maintaining enterprise-level software..."
+                }
+            ],
+            "skills": [
+                "Java",
+                "Python",
+                "SQL",
+                "Git",
+                "Agile"
+            ]
+        }
+    ]
+}
