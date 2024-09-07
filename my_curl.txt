@@ -1,4 +1,4 @@
-curl -X POST http://127.0.0.1:5000/evaluate_applicant -H "Content-Type: application/json" -d '{
+curl -X POST http://127.0.0.1:5000/evaluate -H "Content-Type: application/json" -d '{
   "applicant": {
     "applicant_name": "John Doe",
     "description": {
@@ -16,3 +16,12 @@ curl -X POST http://127.0.0.1:5000/evaluate_applicant -H "Content-Type: applicat
     "skills": ["Python", "Flask", "SQL"]
   }
 }'
+
+
+
+
+
+Gem_url= https://us-central1-aiplatform.googleapis.com/v1/projects/micro-cacao-434818-h2/locations/us-central1/publishers/google/models/publishers/google/models/gemini-1.5-flash-001:generateContent
+
+
+model_id = publishers/google/models/gemini-1.5-flash-001
