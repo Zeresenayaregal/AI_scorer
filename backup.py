@@ -4,11 +4,9 @@ from transformers import pipeline
 
 app = Flask(__name__)
 
-# Load the LLaMA model (replace with the correct model identifier)
 llama3_pipeline = pipeline('text-generation', model='flyingfishinwater/chinese-baby-llama2', device=0 if torch.cuda.is_available() else -1)
 
 def evaluate_applicant_llama3(applicant):
-    # Prepare the prompt for LLaMA
     prompt = f"""
     Evaluate the following applicant for a software developer role:
     
@@ -38,14 +36,12 @@ def evaluate_applicant_llama3(applicant):
     Please provide a score out of 100 for this applicant.
     """
     
-    # Generate the evaluation using LLaMA
     response = llama3_pipeline(prompt, max_length=50)
     
-    # Extract the score from the response (assuming the model outputs a score at the end)
     try:
-        score = int(response[0]['generated_text'].split()[-1])  # Extract the last word and convert to int
+        score = int(response[0]['generated_text'].split()[-1])
     except ValueError:
-        score = 0  # If parsing fails, assign a default score
+        score = 0  
 
     return score
 
@@ -57,10 +53,8 @@ def evaluate_applicant():
         return jsonify({"error": "No applicant data provided"}), 400
 
     try:
-        # Evaluate the applicant using LLaMA
         score = evaluate_applicant_llama3(applicant)
         
-        # Return the score for the applicant
         return jsonify({
             "applicant_name": applicant['applicant_name'],
             "score": score
