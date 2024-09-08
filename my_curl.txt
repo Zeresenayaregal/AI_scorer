@@ -1,22 +1,44 @@
-curl -X POST http://127.0.0.1:5000/evaluate -H "Content-Type: application/json" -d '{
-  "applicant": {
-    "applicant_name": "John Doe",
-    "description": {
-      "aboutJob": "Software Developer",
-      "requirements": "Python, Flask",
-      "responsibilities": "Develop and maintain applications",
-      "additional": ""
-    },
-    "education": [
-      {"degree": "Bachelor's", "fieldOfStudy": "Computer Science", "schoolName": "University A", "startYear": 2015, "endYear": 2019}
-    ],
-    "experience": [
-      {"title": "Junior Developer", "company": "Company A", "startDate": "2019-06", "endDate": "2021-06"}
-    ],
-    "skills": ["Python", "Flask", "SQL"]
-  }
-}'
-
+curl -X POST http://127.0.0.1:5000 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "applicants": [
+      {
+        "applicant_name": "John Doe",
+        "description": {
+          "aboutJob": "The Software Developer will be responsible...",
+          "requirements": "A bachelor's degree in Computer Science...",
+          "responsibilities": "Develop and maintain software applications...",
+          "additional": "Familiarity with Agile methodologies..."
+        },
+        "education": [
+          {
+            "schoolName": "University of Technology",
+            "degree": "Bachelor of Science",
+            "fieldOfStudy": "Computer Science",
+            "startYear": 2015,
+            "endYear": 2019
+          }
+        ],
+        "experience": [
+          {
+            "title": "Software Developer",
+            "company": "Tech Solutions Inc.",
+            "location": "San Francisco, CA",
+            "startDate": "2020-06-01",
+            "endDate": "2023-09-01",
+            "description": "Worked on developing and maintaining enterprise-level software..."
+          }
+        ],
+        "skills": [
+          "Java",
+          "Python",
+          "SQL",
+          "Git",
+          "Agile"
+        ]
+      }
+    ]
+  }'
 
 
 

@@ -1,4 +1,5 @@
 import google.generativeai as genai
+import json
 import os
 
 
@@ -51,10 +52,13 @@ try:
     response = model.generate_content({
         "parts": [
             {
-                "text": f"Please score {applicants_data} out of 100 using the standard of tech companies. I know it is impossible but make the keys on {applicants_data} as standard and score it out of hundred. And give me your response as json format with only the applicant_name key and score key along with there value. I don't need any explantion."
+                "text": f"Please score {applicants_data} out of 100 using the standard of tech companies. I know it is impossible but make the keys on {applicants_data} as standard and score it out of hundred. And give me your response as json format with only the applicant_name key and score key along with there value. I don't need any explantion. And I don't want the answer as string data type"
             }
         ]
     })
-    print(response.text)
+
+    answer_array = response.text.split("\n")
+    Jfile = json.loads(answer_array[1])
+    print(type(Jfile))
 except Exception as e:
     print(f"An error occurred: {e}")
