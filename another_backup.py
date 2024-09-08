@@ -23,7 +23,7 @@ def evaluate_applicant():
         response = model.generate_content({
             "parts": [
                 {
-                    "text": f"Please score {applicant_data} out of 100 using the standard of tech companies. I know it is impossible but make the keys on {applicant_data} as standard and score it out of hundred. And give me your response as json format with only the applicant_name key and score key along with their value. I don't need any explanation."
+                    "text": f"Please score {applicant_data} out of 100 using the standard of tech companies. I know it is impossible but make the keys on {applicant_data} as standard and score it out of hundred. And give me your response as json format with only the score key along with its value. I don't need any explantion."
                 }
             ]
         })
