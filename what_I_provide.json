@@ -3,10 +3,6 @@
         {
             "applicant_name": "John Doe",
             "score": 87
-        },
-        {
-            "applicant_name": "Jane Smith",
-            "score": 92
         }
     ]
 }
